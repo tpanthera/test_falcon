@@ -11,7 +11,7 @@ class obRequestClass:
         resp.body = json.dumps(content)
 
 api = falcon.API()
-api_add_route('/test',objRequestClass())
+api.add_route('/test',objRequestClass())
 
 
 '''
