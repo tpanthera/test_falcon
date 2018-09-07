@@ -59,7 +59,7 @@ class tyre_class:
             
 api = falcon.API()
 #dynamic routing
-api_add_route('/{wheeler_type}', tyre_class())
+api.add_route('/{wheeler_type}', tyre_class())
 
 
 '''
