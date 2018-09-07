@@ -44,22 +44,26 @@ class tyre_class:
                     resp.body = json.dumps(tyre_content_python['Two'])
                 except KeyError:
                     pass
-        if req.path == '/four_wheeler':
+        elif req.path == '/four_wheeler':
                 try:
                     resp.body = json.dumps(tyre_content_python['Four'])
                 except KeyError:
                     pass
-        if req.path == '/six_wheeler':
+        elif req.path == '/six_wheeler':
                 try:                            
                     resp.body = json.dumps(tyre_content_python['Six'])
                 except KeyError:
                     pass
-                    
+        else:
+             resp.body('Please enter valid wheeler type')    
+            
 api = falcon.API()
-api_add_route('/', tyre_class())
+#dynamic routing
+api_add_route('/{wheeler_type}', tyre_class())
 
 
 '''
+algo :
 initiate the falcon api 
 
 call class for any api
@@ -72,4 +76,5 @@ class :
         if path is '/six_wheels'
             send_response_for six wheeler if path is '/two_wheels'         
 
+dynamic api , store value in variable , call class
 '''
