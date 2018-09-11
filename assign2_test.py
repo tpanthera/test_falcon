@@ -1,7 +1,7 @@
 import falcon 
 import pytest
 
-class tyre:
+class Tyre:
 	def __init__():
 		self.width =
 
@@ -18,11 +18,11 @@ class tyre:
 		if(req.path == six_wheel):
 			six_wheel_call = six_wheel()
 
-class two_wheel:
+class two_wheel(Tyre):
+	# implemenation for retrievinh json for 2_wheeler
+class four_wheel(Tyre):
 
-class four_wheel:
-
-class six_wheel:
+class six_wheel(Tyre):
 
 application = falcon.API()
 application.add_route(/{wheel_type}, Tyre())
@@ -40,10 +40,10 @@ return application
 # test_ to discover the method to be tested 
 
 ## Fixtures ### client
-
+'''
 def test_post(client):
 resp = client.post('/route', {'myparam': 'myvalue'})
 assert resp.status == falcon.HTTP_OK
 assert resp.json['myparam'] == 'myvalue'
-
+'''
 
